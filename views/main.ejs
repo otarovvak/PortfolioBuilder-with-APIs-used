@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+   
+    <script src="https://kit.fontawesome.com/aa4e7733af.js" crossorigin="anonymous"></script>
+    <title>Movies</title>
+    <link rel="icon" type="image/x-icon" href="img/logo_svg_main.svg">
+</head>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.header, .eachMovie {
+  width: 100%;
+  margin: auto;
+  background-color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul li {
+  color: black;
+  font-family: Montserrat;
+}
+
+li a {
+  color: black;
+  font-family: Montserrat;
+}
+
+p, h1, h2, h3 {
+  font-family: Montserrat;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.header-links {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.header-login {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+* {
+  font-family: "Montserrat";
+}
+  .movieBlock {
+  width: 150px;
+  height: 225px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.movieTitleBlock {
+  color: black;
+  margin-left: 15px;
+  font-family: Montserrat;
+}
+
+.title-content {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.mainMovie {
+  width: 155px;
+  height: 330px;
+}
+
+.header-top-rated {
+  display: flex;
+  gap: 30px;
+  margin: auto;
+}
+
+.first-trending-movie {
+  width: 290px;
+  height: 430px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.second-trending-movie {
+  position: relative;
+  left: -120px;
+  width: 290.289px;
+  height: 430px;
+  flex-shrink: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 30px;
+}
+
+.first-trending-movie {
+  position: relative;
+  top: 65px;
+  z-index: 1;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  align-items: center;
+  margin-top: 60px;
+  margin-bottom: 140px;
+  width: 80%;
+}
+
+.header-photo {
+  display: flex;
+  justify-content: center;
+  margin-left: 70px;
+}
+
+.header-top-rated {
+  display: flex;
+  overflow-x: auto;
+}
+
+.header-top-rated::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.header-top-rated::-webkit-scrollbar-thumb {
+  background-color: #f89eb6;
+  border-radius: 3px;
+}
+
+.header-top-rated::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+}
+
+.top-rated-content {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-rated-icons {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.title {
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  height: 30px;
+}
+
+.genre {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.descp {
+  display: flex;
+  width: inherit;
+  justify-content: space-between;
+}
+
+.hidden {
+  display: none;
+}
+
+.cart-icon {
+  cursor: pointer;
+}
+
+.accordion {
+  margin: 30px 30px;
+}
+
+.accordion-item {
+  border: 1px solid #f89eb6;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  background-color: #f1f1f1;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.accordion-content {
+  padding: 10px;
+  display: none;
+}
+
+.info {
+  margin-top: 60px;
+}
+
+.cart-footer footer {
+  position: fixed;
+}
+
+footer {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 5px 0px;
+  text-align: center;
+}
+
+footer .row {
+  width: 100%;
+  margin: 1% 0%;
+  padding: 0.6% 0%;
+  color: gray;
+  font-size: 0.8em;
+}
+
+footer .row a {
+  text-decoration: none;
+  color: gray;
+  transition: 0.5s;
+}
+
+footer .row a:hover {
+  color: #fff;
+}
+
+footer .row ul {
+  width: 100%;
+}
+
+footer .row ul li {
+  display: inline-block;
+  margin: 0px 30px;
+}
+
+footer .row a i {
+  font-size: 2em;
+  margin: 0% 1%;
+}
+.eachUser{
+  width: 400px;
+  height: 150px;background-color: #f1f1f1;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid #f89eb6;
+    margin-top: 17px;
+    margin-left: 17px;
+}
+.blockofUsers{
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
+  
+}
+</style>
+<body>
+    <section class="header">
+      
+        <div class="container">
+            <div class="navbar">
+                  <div class="logo">
+                <img src="img/logo_svg_main.svg" alt="">
+                <img src="img/logo_text.svg" alt="">
+            </div>
+            <ul class="header-links"> 
+                <li><a href="/main">Home</a></li>
+                <li><a href="/api1">API 1</a></li>
+                <li><a href="/api2">API 2 </a></li>
+                <li><a href="/API3">API 3</a></li>
+            </ul>
+            <ul class="header-login">
+              <li><a href="/profile/<%= user._id%>">Profile</a></li>
+              <li><a href="/admin">Admin Page</a></li>
+            </ul>
+            </div>
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>FIND ACTORS</h1>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="413" height="47" viewBox="0 0 413 47" fill="none">
+                        <path d="M7.89031 7.60596H0.307434V1.20615H22.7258V7.60596H15.143V46.0017H7.89031V7.60596ZM24.5828 1.20615H31.9015L36.6489 35.9546H36.781L41.5285 1.20615H48.188L41.1989 46.0017H31.5719L24.5828 1.20615ZM71.6606 46.6415C68.1442 46.6415 65.4845 45.6819 63.6827 43.762C61.8803 41.7993 60.9788 39.0052 60.9788 35.379V32.8188H67.8364V35.8905C67.8364 38.7917 69.0894 40.2423 71.5945 40.2423C72.8257 40.2423 73.749 39.9006 74.3639 39.2186C75.0237 38.493 75.3533 37.3411 75.3533 35.7629C75.3533 33.8854 74.9134 32.2431 74.0343 30.8355C73.1552 29.3849 71.5291 27.6567 69.1554 25.6516C66.1661 23.0921 64.0784 20.7883 62.8915 18.7403C61.7046 16.65 61.1109 14.3039 61.1109 11.7014C61.1109 8.16044 62.0342 5.42973 63.8802 3.50991C65.7262 1.54777 68.4077 0.566406 71.9248 0.566406C75.3969 0.566406 78.0123 1.54777 79.7712 3.50991C81.5729 5.42973 82.4745 8.20275 82.4745 11.8296V13.6853H75.6168V11.3815C75.6168 9.84566 75.309 8.73607 74.6935 8.0534C74.0786 7.32841 73.177 6.96561 71.9902 6.96561C69.5728 6.96561 68.3641 8.39506 68.3641 11.2533C68.3641 12.8744 68.8034 14.3891 69.6825 15.7968C70.6058 17.2044 72.2543 18.9114 74.6281 20.9165C77.661 23.476 79.7487 25.801 80.892 27.8913C82.0346 29.9823 82.6059 32.4348 82.6059 35.2507C82.6059 38.9199 81.6608 41.7352 79.7712 43.698C77.9245 45.6601 75.2212 46.6415 71.6606 46.6415ZM86.7648 1.20615H94.0174V19.4447H101.798V1.20615H109.051V46.0017H101.798V25.844H94.0174V46.0017H86.7648V1.20615ZM124.937 46.6415C121.376 46.6415 118.651 45.6601 116.76 43.698C114.871 41.7352 113.926 38.9622 113.926 35.379V11.8296C113.926 8.24569 114.871 5.47267 116.76 3.50991C118.651 1.54777 121.376 0.566406 124.937 0.566406C128.498 0.566406 131.223 1.54777 133.113 3.50991C135.003 5.47267 135.948 8.24569 135.948 11.8296V35.379C135.948 38.9622 135.003 41.7352 133.113 43.698C131.223 45.6601 128.498 46.6415 124.937 46.6415ZM124.937 40.2423C127.442 40.2423 128.695 38.7705 128.695 35.827V11.3815C128.695 8.43738 127.442 6.96561 124.937 6.96561C122.431 6.96561 121.178 8.43738 121.178 11.3815V35.827C121.178 38.7705 122.431 40.2423 124.937 40.2423ZM139.139 1.20615H146.128L149.359 35.6347H149.491L152.92 1.20615H160.831L164.261 35.6347H164.392L167.623 1.20615H173.887L169.206 46.0017H160.172L156.875 15.7968H156.744L153.447 46.0017H143.82L139.139 1.20615ZM186.985 46.6415C183.468 46.6415 180.809 45.6819 179.006 43.762C177.204 41.7993 176.303 39.0052 176.303 35.379V32.8188H183.16V35.8905C183.16 38.7917 184.413 40.2423 186.919 40.2423C188.149 40.2423 189.073 39.9006 189.688 39.2186C190.347 38.493 190.677 37.3411 190.677 35.7629C190.677 33.8854 190.238 32.2431 189.359 30.8355C188.48 29.3849 186.853 27.6567 184.479 25.6516C181.49 23.0921 179.402 20.7883 178.215 18.7403C177.028 16.65 176.435 14.3039 176.435 11.7014C176.435 8.16044 177.358 5.42973 179.205 3.50991C181.051 1.54777 183.732 0.566406 187.248 0.566406C190.721 0.566406 193.337 1.54777 195.095 3.50991C196.897 5.42973 197.798 8.20275 197.798 11.8296V13.6853H190.941V11.3815C190.941 9.84566 190.633 8.73607 190.018 8.0534C189.402 7.32841 188.501 6.96561 187.314 6.96561C184.897 6.96561 183.688 8.39506 183.688 11.2533C183.688 12.8744 184.128 14.3891 185.007 15.7968C185.929 17.2044 187.578 18.9114 189.952 20.9165C192.985 23.476 195.073 25.801 196.216 27.8913C197.359 29.9823 197.93 32.4348 197.93 35.2507C197.93 38.9199 196.985 41.7352 195.095 43.698C193.249 45.6601 190.545 46.6415 186.985 46.6415ZM218.253 1.20615H228.078L235.595 46.0017H228.342L227.023 37.1065V37.2347H218.781L217.462 46.0017H210.737L218.253 1.20615ZM226.166 31.1553L222.935 9.01364H222.803L219.638 31.1553H226.166ZM239.113 1.20615H248.213L255.268 28.0195H255.4V1.20615H261.861V46.0017H254.411L245.707 13.3013H245.576V46.0017H239.113V1.20615ZM267.252 1.20615H278.329C281.934 1.20615 284.638 2.14523 286.439 4.02211C288.242 5.89899 289.143 8.65081 289.143 12.277V34.9309C289.143 38.5571 288.242 41.3089 286.439 43.1858C284.638 45.0633 281.934 46.0017 278.329 46.0017H267.252V1.20615ZM278.197 39.6026C279.384 39.6026 280.286 39.2609 280.901 38.5782C281.56 37.8956 281.89 36.7866 281.89 35.2507V11.9571C281.89 10.4213 281.56 9.31234 280.901 8.62967C280.286 7.947 279.384 7.60596 278.197 7.60596H274.505V39.6026H278.197ZM304.599 1.20615H314.951L319.567 33.2668H319.699L324.314 1.20615H334.666V46.0017H327.809V12.0853H327.677L322.402 46.0017H316.336L311.061 12.0853H310.929V46.0017H304.599V1.20615ZM350.562 46.6415C347.002 46.6415 344.276 45.6601 342.386 43.698C340.496 41.7352 339.551 38.9622 339.551 35.379V11.8296C339.551 8.24569 340.496 5.47267 342.386 3.50991C344.276 1.54777 347.002 0.566406 350.562 0.566406C354.123 0.566406 356.848 1.54777 358.738 3.50991C360.629 5.47267 361.574 8.24569 361.574 11.8296V35.379C361.574 38.9622 360.629 41.7352 358.738 43.698C356.848 45.6601 354.123 46.6415 350.562 46.6415ZM350.562 40.2423C353.068 40.2423 354.32 38.7705 354.32 35.827V11.3815C354.32 8.43738 353.068 6.96561 350.562 6.96561C348.057 6.96561 346.804 8.43738 346.804 11.3815V35.827C346.804 38.7705 348.057 40.2423 350.562 40.2423ZM366.478 1.20615H377.226C380.962 1.20615 383.688 2.05996 385.402 3.76633C387.117 5.42976 387.974 8.01107 387.974 11.5091V14.2609C387.974 18.9114 386.392 21.855 383.227 23.0921V23.2203C384.985 23.7318 386.215 24.7773 386.919 26.3555C387.666 27.9343 388.039 30.0458 388.039 32.6912V40.5622C388.039 41.8422 388.084 42.8871 388.172 43.698C388.259 44.4659 388.479 45.2338 388.831 46.0017H381.446C381.182 45.2761 381.007 44.5935 380.919 43.9537C380.831 43.314 380.787 42.1621 380.787 40.498V32.3072C380.787 30.2592 380.435 28.8304 379.732 28.0195C379.072 27.2087 377.908 26.8035 376.237 26.8035H373.732V46.0017H366.478V1.20615ZM376.369 20.4043C377.82 20.4043 378.896 20.0415 379.6 19.3166C380.347 18.5909 380.721 17.3756 380.721 15.6686V12.2135C380.721 10.5918 380.413 9.41874 379.797 8.69375C379.226 7.96814 378.303 7.60596 377.029 7.60596H373.732V20.4043H376.369ZM393.072 1.20615H412.853V7.60596H400.325V19.4447H410.282V25.844H400.325V39.6026H412.853V46.0017H393.072V1.20615Z" fill="url(#paint0_linear_1_899)"/>
+                        <defs>
+                          <linearGradient id="paint0_linear_1_899" x1="138.016" y1="13.338" x2="265.751" y2="67.6858" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#2203FF"/>
+                            <stop offset="1" stop-color="#C40D60"/>
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                        <p>Our platform is trusted by millions and provide best experience!</p>
+                </div>
+                <div class="header-photo">
+                    <div class="first-trending-movie" ></div>
+                    <div class="second-trending-movie"></div>
+                </div>
+            </div>
+
+          
+
+        </div>
+<section class="container">
+  <% if (data && data.length > 0) { %>
+      <ul class="blockofUsers">
+          <% data.forEach(user => { %>
+              <li class="eachUser">
+                  <strong>Username:</strong> <%= user.username %><br>
+                  <strong>Email:</strong> <%= user.email %><br>
+                  <strong>Age:</strong> <%= user.age %><br>
+                  <strong>Country:</strong> <%= user.country %><br>
+                  <strong>Gender:</strong> <%= user.gender %><br>
+                  <strong>Role:</strong> <%= user.role %>
+              </li>
+          <% }); %>
+      </ul>
+  <% } else { %>
+      <p>No users available</p>
+  <% } %>
+</section>
+
+    </section>
+    <footer>
+      <div class="footer">
+      <div class="row">
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-instagram"></i></a>
+      <a href="#"><i class="fa fa-youtube"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      </div>
+      <p>Otarova Akniyet SE-2228</p>
+      <div class="row">
+      <ul>
+      <li><a href="#">Contact us</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="#">Terms & Conditions</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      </ul>
+      </div>
+      
+      </div>
+      </footer>
+  
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          var headers = document.querySelectorAll('.accordion-header');
+          var contents = document.querySelectorAll('.accordion-content');
+    
+          headers.forEach(function (header, index) {
+            header.addEventListener('click', function () {
+              toggleAccordion(index);
+            });
+          });
+    
+          function toggleAccordion(index) {
+            contents[index].style.display = (contents[index].style.display === 'block') ? 'none' : 'block';
+          }
+        });
+        const options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2Yjg1ZDM4ZmJjY2ZjZmExYTJkNDVkODdkYzUxZGQ0OSIsInN1YiI6IjY1NTVkY2MxNTM4NjZlMDBlMjkzMWQ4YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Ob5d2duWLBvtJQDwv_zRZfKOO3CtBartErco3uu1Kf0'
+  }
+};
+
+fetch(`https://api.themoviedb.org/3/movie/1022796?language=en-US`, options)  //pictures in header
+  .then(response => response.json())
+  .then(movieData => {
+    const secondtrendingmovie=document.querySelector('.second-trending-movie') 
+    secondtrendingmovie.style.backgroundImage=`url('https://image.tmdb.org/t/p/w500${movieData.poster_path}')`
+fetch(`https://api.themoviedb.org/3/movie/569094?language=en-US`, options)  //pictures in header
+  .then(response => response.json())
+  .then(movieData => {
+    const firsttrendingmovie=document.querySelector('.first-trending-movie') 
+    firsttrendingmovie.style.backgroundImage=`url('https://image.tmdb.org/t/p/w500${movieData.poster_path}')`
+})
+})
+      </script>
+    <script src="https://kit.fontawesome.com/aa4e7733af.js" crossorigin="anonymous"></script>
+
+    
+</body>
+</html>
+

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Ratings Chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="public/main.css">
+  <style>
+    .iconLI{
+        width: fit-content;
+      }
+    footer .row{
+        display: flex;
+    justify-content: center;
+      }
+footer {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 5px 0px;
+  text-align: center;
+}
+
+footer .row {
+  width: 100%;
+  margin: 1% 0%;
+  padding: 0.6% 0%;
+  color: gray;
+  font-size: 0.8em;
+}
+
+footer .row a {
+  text-decoration: none;
+  color: gray;
+  transition: 0.5s;
+}
+
+footer .row a:hover {
+  color: #fff;
+}
+
+footer .row ul {
+  width: 100%;
+}
+
+footer .row ul li {
+  display: inline-block;
+  margin: 0px 30px;
+}
+
+footer .row a i {
+  font-size: 2em;
+  margin: 0% 1%;
+}     
+a {
+  text-decoration: none;
+}
+
+ul li {
+  color: black;
+  font-family: Montserrat;
+}
+
+li a {
+  color: black;
+  font-family: Montserrat;
+}
+
+p, h1, h2, h3 {
+  font-family: Montserrat;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.header-links {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="navbar">
+        <div class="logo">
+      <img src="img/logo_svg_main.svg" alt="">
+      <img src="img/logo_text.svg" alt="">
+  </div>
+  <ul class="header-links"> 
+      <li><a href="/main">Home</a></li>
+      <li><a href="/api1">API 1</a></li>
+      <li><a href="/Api2">API 2 </a></li>
+      <li><a href="/API3">API 3</a></li>
+  </ul>
+  <ul class="header-login">
+    <li><a href="/profile/<%= user._id%>">Profile</a></li>
+    <li><a href="/admin">Admin Page</a></li>
+  </ul>
+  </div>
+  <canvas id="myChart" ></canvas>
+  <%- generateChartScript(movieData) %>
+  <div class="footer">
+    <div class="row">
+    <a href="#" class="iconLI"><i class="fa fa-facebook"></i></a>
+    <a href="#" class="iconLI"><i class="fa fa-instagram"></i></a>
+    <a href="#" class="iconLI"><i class="fa fa-youtube"></i></a>
+    <a href="#" class="iconLI"><i class="fa fa-twitter"></i></a>
+    </div>
+    <p>Otarova Akniyet SE-2228</p>
+    <div class="row">
+    <ul>
+    <li><a href="#">Contact us</a></li>
+    <li><a href="explore.html">Explore</a></li>
+    <li><a href="#">Terms & Conditions</a></li>
+    <li><a href="cart.html">Cart</a></li>
+    </ul>
+    </div>
+    
+    </div>
+</div>
+
+</body>
+</html>

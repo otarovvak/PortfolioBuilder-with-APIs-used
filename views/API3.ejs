@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="public/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+          <img src="img/logo_svg_main.svg" alt="">
+          <img src="img/logo_text.svg" alt="">
+      </div>
+      <ul class="header-links"> 
+          <li><a href="/main">Home</a></li>
+          <li><a href="/api1">API 1</a></li>
+          <li><a href="/Api2">API 2 </a></li>
+          <li><a href="/API3">API 3</a></li>
+      </ul>
+      <ul class="header-login">
+        <li><a href="/profile/<%= user._id%>">Profile</a></li>
+        <li><a href="/admin">Admin Page</a></li>
+      </ul>
+      </div>
+    <canvas id="myChart" ></canvas>
+  <%- renderMoviesChart(movieTitles, moviePopularity) %>
+  <div class="footer">
+    <div class="row">
+    <a href="#" class="iconLI"><i class="fa fa-facebook"></i></a>
+    <a href="#" class="iconLI"><i class="fa fa-instagram"></i></a>
+    <a href="#" class="iconLI"><i class="fa fa-youtube"></i></a>
+    <a href="#" class="iconLI"><i class="fa fa-twitter"></i></a>
+    </div>
+    <p>Otarova Akniyet SE-2228</p>
+    <div class="row">
+    <ul>
+    <li><a href="#">Contact us</a></li>
+    <li><a href="explore.html">Explore</a></li>
+    <li><a href="#">Terms & Conditions</a></li>
+    <li><a href="cart.html">Cart</a></li>
+    </ul>
+    </div>
+    
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="public/style.css">
+</head>
+<style>
+    .small-container {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e3e3e3;
+        border-radius: 10px;
+        margin: auto;
+        margin-top: 70px;
+        padding: 30px 40px;
+    }
+    .small-container input {
+        width: 100%;
+        display: block;
+        border: none;
+        border-bottom: 1px solid #999;
+        padding: 6px 30px;
+        box-sizing: border-box;
+        outline: none;
+    }
+    .small-container .input-block {
+        position: relative;
+        margin-bottom: 25px;
+        overflow: hidden;
+    }
+    .small-container h1 {
+        margin-bottom: 20px;
+    }
+
+    .icons {
+        position: absolute;
+        left: 10px;
+        top: 40%;
+    }
+    select{
+      margin-bottom: 15px;
+    }
+</style>
+
+<body>
+    <div class="small-container"> 
+        <h1 style="color: #cc3e89;">Register</h1> 
+        <form id="register-form" action="/register" method="POST">
+                <label for="username" style="color: #cc3e89;">Username:</label> 
+                <input type="text" id="username" name="username" required>
+            
+                <label for="email" style="color: #cc3e89;">Email:</label> 
+                <input type="email" id="email" name="email" required>
+                <label for="password" style="color: #cc3e89;">password:</label> 
+                <input type="pass'" id="password" name="password" required>
+           
+                <label for="age" style="color: #cc3e89;">Age:</label> 
+                <input type="number" id="age" name="age" required>
+       
+                <label for="country" style="color: #cc3e89;">Country:</label> 
+                <input type="text" id="country" name="country" required>
+           
+                <label for="gender" style="color: #cc3e89;">Gender:</label> 
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+           
+            <div>            <button type="submit" style="background-color: #cc3e89; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Register</button>
+</div>
+        </form>
+        <div id="error-message" class="error-message" style="color: red;"></div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+.small-container {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e3e3e3;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 70px;
+    padding: 30px 40px;
+  }
+  .small-container input {
+    width: 100%;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #999;
+    padding: 6px 30px;
+    box-sizing: border-box;
+    outline: none;
+  }
+  .small-container .input-block {
+    position: relative;
+    margin-bottom: 25px;
+    overflow: hidden;
+  }
+  .small-container h1 {
+    margin-bottom: 20px;
+  }
+  
+  .icons {
+    position: absolute;
+    left: 10px;
+    top: 40%;
+  }
+  
+  .signup-btn, .log-btn {
+    display: inline-block;
+    background: #cc3e89;
+    color: #fff;
+    border: none;
+    width: auto;
+    padding: 15px 39px;
+    border-radius: 5px;
+    margin-top: 25px;
+    cursor: pointer;
+    width: 40%;
+  }
+  
+  .error-message {
+    font-size: 12px;
+    color: red;
+  }
+  
+  .question-sign {
+    margin-top: 10px;
+  }
